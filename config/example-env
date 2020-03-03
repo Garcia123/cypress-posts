@@ -1,0 +1,7 @@
+// env template
+apiKey=AIzaSyCUVMnuI2_2nDVaFcalHqqmXML5f9ylRjU
+authDomain=platziposts-9e504.firebaseapp.com
+databaseURL=https://platziposts-9e504.firebaseio.com
+projectId=platziposts-9e504
+storageBucket=platziposts-9e504.appspot.com
+messagingSenderId=136036702724
