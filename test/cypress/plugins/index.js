@@ -18,4 +18,12 @@
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
+  on('before:browser:launch',(browswer, args) => {
+    browswer = browswer || {};
+    console.log(browswer, args);
+    if (browswer.name === 'chrome') {
+      args.push('--kiosk');
+      return args;
+    }
+  });
 }
