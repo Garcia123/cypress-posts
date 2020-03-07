@@ -23,6 +23,18 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+Cypress.Commands.add('createUser', user => {
+    cy.get('#login > section > div.col2 > form > div > a:nth-child(2)')
+        .click();
+    cy.get('#name').type(user.name);
+    cy.get('#title').type(user.conpany);
+    cy.get('#email2').type(user.email);
+    cy.get('#password2').type(user.psswrod);
+    cy.contains('.button', "Registrarse").click();
+    cy.wait(3000);
+    cy.get('.error-msg').should('not.exist');
+});
+
 Cypress.Commands.add('loginUser', (userName, password) => {
     cy.get('#email1').type(userName);
     cy.get('#password1').type(password);

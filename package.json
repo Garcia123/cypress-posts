@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "cypress:open": "cypress open --project ./test",
+    "cypress:run": "cypress run --project ./test",
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "lint": "standard",
     "lint-fix": "standard --fix",
@@ -15,6 +16,7 @@
     "test:server": "pushstate-server -d ./dist",
     "test:init": "npm run test:server",
     "test:dev": "npm run build:test && run-p -r test:server cypress:open",
+    "test": "npm run build:test && run-p -r test:server cypress:run",
     "test:clean": "cd build && node clean-test-db.js"
   },
   "dependencies": {
